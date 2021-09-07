@@ -1,0 +1,37 @@
+<%= form_with model: @group do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% @group.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :municipality %><br>
+    <%= form.text_field :municipality %>
+    <% @group.errors.full_messages_for(:municipality).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :grouptype %><br>
+    <%= form.text_field :grouptype %>
+    <% @group.errors.full_messages_for(:grouptype).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+   <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+    <% @group.errors.full_messages_for(:description).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

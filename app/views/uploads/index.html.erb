@@ -1,0 +1,35 @@
+<h1>Upload</h1>
+<%= link_to "New", new_upload_path %>
+
+<h2>Group List:</h2>
+  <% @groups.each do |group| %>
+    <li>
+      <%= link_to group.name, group %>
+    </li>
+  <% end %>
+
+<h2>Uploaded Files</h2>
+  <table>
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>Download Link</th>
+         <th> </th>
+      </tr>
+   </thead>
+   <tbody>
+      <% @uploads.each do |upload| %>
+         <tr>
+            <td><%= upload.name %></td>
+            <td>
+               <%= link_to "Download Resume", upload.attachment_url %> 
+               <%
+=begin%>
+ <%= JSON.parse(File.open('public' + upload.attachment_url).read) %> 
+<%
+=end%>
+            </td>
+            <td><%= button_to "Delete",  upload, method: :delete, confirm: "Are you sure that you wish to delete #{upload.name}?" %></td>
+         </tr>
+      <% end %>
+   </tbody>

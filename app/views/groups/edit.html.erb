@@ -1,0 +1,25 @@
+<h1>Edit Group</h1>
+<%= render "groupheader", group: @group %>
+<%= render "form", group: @group %><br>
+<strong>Links:</strong>
+<%= render @group.links %>
+<h2>Add a Link:</h2>
+<%= form_with model: [ @group, @group.links.build ] do |form| %>
+  <p>
+    <%= form.label :linkname %><br>
+    <%= form.text_field :linkname %>
+  </p>
+  <p>
+    <%= form.label :url %><br>
+    <%= form.text_area :url %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<ul>
+  <li><%= link_to "Delete Group", group_path(@group),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+  </li>
+</ul>

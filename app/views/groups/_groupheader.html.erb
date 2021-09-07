@@ -1,0 +1,6 @@
+<h1><strong>Navn:</strong> <%= @group.name %></h1>
+<p><strong>Kommune:</strong> <%= @group.municipality %></p>
+<p><strong>Type</strong> <%= @group.grouptype%></p>
+<% if !@group.description.blank? %>
+<p><strong>Beskrivelse:</strong> <%= @group.description%></p>
+<% end %>
