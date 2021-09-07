@@ -1,15 +1,3 @@
-GIT
-  remote: https://github.com/carrierwaveuploader/carrierwave.git
-  revision: 311837b24c0c0a7611794ca87d783378e8801d3f
-  specs:
-    carrierwave (3.0.0.alpha)
-      activemodel (>= 6.0.0)
-      activesupport (>= 6.0.0)
-      addressable (~> 2.6)
-      image_processing (~> 1.1)
-      marcel (~> 1.0.0)
-      ssrf_filter (~> 1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -104,6 +92,14 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    carrierwave (2.2.2)
+      activemodel (>= 5.0.0)
+      activesupport (>= 5.0.0)
+      addressable (~> 2.6)
+      image_processing (~> 1.1)
+      marcel (~> 1.0.0)
+      mini_mime (>= 0.1.3)
+      ssrf_filter (~> 1.0)
     childprocess (3.0.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
@@ -130,13 +126,15 @@ GEM
     method_source (1.0.0)
     mini_magick (4.11.0)
     mini_mime (1.1.1)
+    mini_portile2 (2.6.1)
     minitest (5.14.4)
     msgpack (1.4.2)
     net-scp (3.0.0)
       net-ssh (>= 2.6.5, < 7.0.0)
     net-ssh (6.1.0)
     nio4r (2.5.8)
-    nokogiri (1.12.4-x86_64-linux)
+    nokogiri (1.12.4)
+      mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     public_suffix (4.0.6)
     puma (5.4.0)
@@ -239,7 +237,7 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
-  x86_64-linux
+  ruby
 
 DEPENDENCIES
   bootsnap (>= 1.4.4)
@@ -249,7 +247,7 @@ DEPENDENCIES
   capistrano-rails (= 1.4.0)
   capistrano-rbenv (= 2.1.4)
   capybara (>= 3.26)
-  carrierwave!
+  carrierwave (~> 2.0)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   puma (~> 5.0)
@@ -266,7 +264,7 @@ DEPENDENCIES
   webpacker (~> 5.0)
 
 RUBY VERSION
-   ruby 3.0.2p107
+   ruby 2.7.0p0
 
 BUNDLED WITH
-   2.2.26
+   2.1.2

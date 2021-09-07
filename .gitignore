@@ -43,3 +43,5 @@ yarn-debug.log*
 /config/deploy
 
 /vendor
+
+/.gitIgnoreFolder
